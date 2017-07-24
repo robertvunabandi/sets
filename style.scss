@@ -1,0 +1,203 @@
+// get colors from material android
+
+$color-red: rgba(247, 57, 0, 1);
+$color-green: rgba(7, 192, 56, 1);
+$color-violet: rgba(113, 30, 189, 1);
+
+$primary-color: #0fb35d; // CHANGE
+$primary-color-light: #16e97b; // CHANGE
+$secondary-color: #ff6f1a; // CHANGE
+$ternary-color: #ffd60a; // CHANGE
+
+$color-highlight: #ffcb6a;
+$color-highlight-oa: rgba(255, 203, 106, 0.1);
+$color-highlight-ob: rgba(255, 203, 106, 0.3);
+$color-highlight-oc: rgba(255, 203, 106, 0.5);
+
+$color-highlight-wrong: #ff3535;
+$color-highlight-wrong-oa: rgba(255, 53, 53, 0.1);
+$color-highlight-wrong-ob: rgba(255, 53, 53, 0.3);
+$color-highlight-wrong-oc: rgba(255, 53, 53, 0.5);
+
+$dark-color: #202020;
+$light-color: #f9f9f9;
+
+$l-shadow-oa: rgba(0,0,0,0.1);
+$l-shadow-ob: rgba(0,0,0,0.25);
+$l-shadow-oc: rgba(0,0,0,0.4);
+$l-shadow-od: rgba(0,0,0,0.55);
+$l-shadow-oe: rgba(0,0,0,0.17);
+
+$l-shadow-white-oa: rgba(255,255,255,0.1);
+$l-shadow-white-ob: rgba(255,255,255,0.25);
+$l-shadow-white-oc: rgba(255,255,255,0.4);
+$l-shadow-white-od: rgba(255,255,255,0.55);
+$l-shadow-white-oe: rgba(255,255,255,0.17);
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body, #main {
+	text-align: center;
+	margin: 0 auto;
+	
+}
+
+/* TITLE */
+#title {
+	cursor:default !important;
+	padding-left: 5rem !important;
+	text-align: left; color: $dark-color; font-weight: 800;
+	background-color: rgba(247, 57, 0, 0.4);
+	#new_game_button {
+		color: white;
+		position: absolute; left: 17rem;
+		font-size: 3.5rem;
+		border: 0rem solid $color-red;
+		background-color: rgba(0,0,0,0);
+		margin-left: 2rem;
+		vertical-align: middle;
+		transition: color 200ms, background 200ms, text-shadow 200ms;
+	}
+	#new_game_button:active {
+		text-shadow: 3px 3px $l-shadow-white-oa, 
+					-3px -3px $l-shadow-white-ob, 
+					-3px 3px $l-shadow-white-oc, 
+					3px -3px $l-shadow-white-od;
+	}
+}
+
+/* GAME AND SCORE BOARD */
+
+#score_board {
+	cursor:default !important;
+	color: white;
+	background-color: black;
+	display: block;
+	border: 1px solid $l-shadow-oe;
+	margin-bottom: 0.65rem;
+	box-shadow: inset 0rem 0rem 1.75rem $l-shadow-oa, 
+				0rem 0rem 0.25rem $l-shadow-oa, 
+				0rem 0rem 0.4rem $l-shadow-oa !important;
+	#available_sets {
+		text-align: center !important;
+	}
+	#players {
+		text-align: left !important;
+	}
+}
+#game {
+	display: block;
+}
+/* PLAYERS */
+.p_nm {
+	margin: 0.5rem;
+}
+.p_pts {
+	margin: 0.5rem;
+}
+
+/* CARDS */
+.symbol {
+	display: inline-block;
+	min-width: 5.75rem;
+	max-width: 5.75rem;
+}
+.card-row {
+	
+}
+.card {
+	cursor:pointer !important;
+	display: inline-block; text-align: center; 
+	min-width: 22rem; max-width: 22rem;	margin: 0.5rem;
+
+	border: 0.25rem solid rgba(0,0,0,0.05);
+	border-radius: 1rem;
+	box-shadow: 0rem 0rem 0.25rem rgba(0,0,0,0.3), 0rem 0rem 0.75rem rgba(0,0,0,0.1), 0rem 0rem 0.9rem rgba(0,0,0,0.1);
+	transition: box-shadow 150ms, border 150ms;
+}
+
+.card-nulled {
+	border: none !important; border-radius: 0rem !important; box-shadow: none !important;
+}
+
+.card:hover {
+	box-shadow: 0rem 0rem 0.5rem rgba(0,0,0,0.1), 0rem 0rem 0.75rem rgba(0,0,0,0.2), 0rem 0rem 1.9rem rgba(0,0,0,0.5);
+}
+
+.card-highligted {
+	border: 0.25rem solid $color-highlight !important;
+	box-shadow: 0rem 0rem 0.5rem $color-highlight-oa, 0rem 0rem 0.75rem $color-highlight-ob, 0rem 0rem 1.9rem $color-highlight-oc !important;
+}
+
+.card-highligted-wrong {
+	border: 0.25rem solid $color-highlight-wrong !important;
+	box-shadow: 0rem 0rem 0.5rem $color-highlight-wrong-oa, 0rem 0rem 0.75rem $color-highlight-wrong-ob, 0rem 0rem 1.9rem $color-highlight-wrong-oc !important;
+}
+
+/* TEXTS */
+/* font weights: 300,300i,400,400i,600,600i,700,700i,800,800i */
+
+.t-big,.t-headline,.t-title,.t-body,.t-emph {
+	// padding: 0rem !important; margin: 0rem !important;
+}
+.t-big {
+	font-weight: 800;
+	font-style: italic;
+	font-size: 3.5rem;
+	display: block;
+}
+.t-headline {
+	font-weight: 800;
+	font-size: 3.5rem;
+	margin-left: 5rem;
+}
+.t-title {
+	font-weight: 600;
+	font-size: 2rem;
+}
+.t-body {
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+.t-emph {
+	font-weight: 300;
+	font-style: italic;
+	font-size: 1.5rem;
+}
+
+/* CREDITS */
+
+#credit {
+	margin-top: 1rem;
+	font-weight: 300; color: rgba(75,75,75,1);
+	.link, .link:visited {
+		color: rgba(75,75,75,1);
+		padding-left: 0.5rem; padding-right: 0.5rem;
+		padding-top: 0.25rem; padding-bottom: 0.25rem;
+		font-weight: 500;
+		background-color: rgba(7, 192, 56, 0.065);
+		transition: font 200ms, font-weight 200ms;
+	}
+	.link:hover {
+		font-weight: 800;
+		text-decoration: none;
+	}
+	.link:active, .link:focus {
+		color: $color-violet;
+	}
+}
+
+/* ADDUP */
+
+.noselect {
+	/* Taken from: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting-using-css */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
